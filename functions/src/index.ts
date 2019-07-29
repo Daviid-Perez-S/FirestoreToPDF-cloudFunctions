@@ -13,8 +13,8 @@ admin.initializeApp()
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: '163189@ids.upchiapas.edu.mx',
-        pass: 'TICHATICHA'
+        user: '163202@ids.upchiapas.edu.mx',
+        pass: 'pesddya97'
     }
 })
 
@@ -75,9 +75,9 @@ export const firestoreChange = functions.firestore.document('registros/{nuevo}')
         pdf.end()
         
         const mailOptions = {
-            from: '163189@ids.upchiapas.edu.mx', // Something like: Jane Doe <janedoe@gmail.com>
+            from: '163202@ids.upchiapas.edu.mx', // Something like: Jane Doe <janedoe@gmail.com>
             to: mail,
-            subject: 'Pruebas', // email subject
+            subject: 'Reconocimiento de Taller', // email subject
             attachments:[{
                 filename: 'Taller.pdf',
                 content: pdf,
@@ -95,6 +95,6 @@ export const firestoreChange = functions.firestore.document('registros/{nuevo}')
     }
     else
     {
-        return Promise.reject("El documdnto no se encuentra")
+        return Promise.reject("El documento no se encuentra")
     }
 })
